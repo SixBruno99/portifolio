@@ -32,7 +32,14 @@ export function Home() {
           </Flex>
         </Box>
         <Box>
-          <Image src={Foto} width="300" h="400" />
+          <Image
+            src={Foto}
+            width="300"
+            h="400"
+            clipPath={
+              "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)"
+            }
+          />
         </Box>
       </Flex>
       {/* <iframe src="https://brunohenrique.netlify.app/" width="400" height="400">

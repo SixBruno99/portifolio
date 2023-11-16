@@ -22,7 +22,6 @@ export const SocialMedias = () => {
       >
         <RiGithubFill size={32} />
       </IconButton>
-
       <IconButton
         aria-label="linkedin-ib"
         variant="none"

@@ -1,5 +1,5 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
-import Logo from "/src/assets/favicon.ico";
+import Logo from "/src/assets/favicon-header.ico";
 
 export function Header() {
   return (
