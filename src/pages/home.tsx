@@ -9,6 +9,7 @@ import {
 
 import Foto from "../assets/Images/foto.jpg";
 import { SocialMedias } from "../core/components/social";
+import { Projects } from "../core/components/projects";
 
 const imageChange = keyframes`
   0% {
@@ -26,7 +27,7 @@ const imageChange = keyframes`
 const textInitialization = keyframes`
   0% {
     margin-top: 50px;
-    opacity: 0
+    opacity: 0.1
   }
   50% {
     opacity: 0.5
@@ -41,17 +42,18 @@ export function Home() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const imageAnimation = prefersReducedMotion
-    ? undefined
-    : `${imageChange} infinite  5s ease-in`;
+    ? `${imageChange} infinite 3s ease-in`
+    : undefined;
 
   const textAnimation = prefersReducedMotion
-    ? undefined
-    : `${textInitialization} 1  2.5s ease-in`;
+    ? `${textInitialization} 1 1.5s ease-in`
+    : undefined;
 
   return (
     <Flex
       minHeight="calc(100vh - 112px)"
-      width="7xl"
+      maxWidth="7xl"
+      marginTop={12}
       marginX="auto"
       paddingInline="5"
       alignItems="center"
@@ -59,11 +61,21 @@ export function Home() {
       flexDirection="column"
     >
       <Flex width="full" justifyContent="space-evenly">
-        <Box>
-          <Text fontSize="22px" fontWeight="bold" color="#F5F5F5" animation={textAnimation}>
+        <Box marginY="auto">
+          <Text
+            fontSize="22px"
+            fontWeight="bold"
+            color="#F5F5F5"
+            animation={textAnimation}
+          >
             Bruno Henrique
           </Text>
-          <Text fontSize="32px" fontWeight="bold" color="#F5F5F5" animation={textAnimation}>
+          <Text
+            fontSize="32px"
+            fontWeight="bold"
+            color="#F5F5F5"
+            animation={textAnimation}
+          >
             Front End Developer
           </Text>
           <Text marginTop={4} color="#F5F5F5" animation={textAnimation}>
@@ -79,9 +91,12 @@ export function Home() {
           <Image animation={imageAnimation} src={Foto} width="300" h="400" />
         </Box>
       </Flex>
-      {/* <iframe src="https://brunohenrique.netlify.app/" width="400" height="400">
-        <p>CV</p>
-      </iframe> */}
+
+      <Flex maxWidth="7xl" marginY={12} gap={5}>
+        <Projects projectLink="https://brunohenrique.netlify.app/" title="CV" />
+        <Projects projectLink="https://brunohenrique.netlify.app/" title="CV" />
+        <Projects projectLink="https://www.hltv.org/A" title="CV" />
+      </Flex>
     </Flex>
   );
 }
