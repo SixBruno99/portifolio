@@ -60,6 +60,7 @@ export function Home() {
       justifyContent="center"
       flexDirection="column"
     >
+      <a href="#footer">nav</a>
       <Flex width="full" justifyContent="space-evenly">
         <Box marginY="auto">
           <Text
@@ -92,7 +93,15 @@ export function Home() {
         </Box>
       </Flex>
 
-      <Flex maxWidth="7xl" marginY={12} gap={5}>
+      <Flex
+        maxWidth="full"
+        minWidth="7xl"
+        overflowX="scroll"
+        marginY={12}
+        gap={5}
+      >
+        <Projects projectLink="https://brunohenrique.netlify.app/" title="CV" />
+        <Projects projectLink="https://brunohenrique.netlify.app/" title="CV" />
         <Projects projectLink="https://brunohenrique.netlify.app/" title="CV" />
         <Projects projectLink="https://brunohenrique.netlify.app/" title="CV" />
         <Projects projectLink="https://www.hltv.org/A" title="CV" />
