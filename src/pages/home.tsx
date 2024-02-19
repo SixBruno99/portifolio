@@ -14,7 +14,7 @@ import { Projects } from "../core/components/projects";
 // Images imports
 import Foto from "../assets/Images/foto.jpg";
 import Curriculo from "../assets/Images/curriculo.png";
-import Guia from "../assets/Images/guia-leticia.png";
+import Manual from "../assets/Images/manual-leticia.png";
 
 const imageChange = keyframes`
   0% {
@@ -106,15 +106,17 @@ export function Home() {
         <Projects
           projectImage={Curriculo}
           projectLink="https://brunohenrique.netlify.app/"
+          repositoryLink="https://github.com/SixBruno99/Curriculo"
           title="Currículo programado"
           description="Oi"
           technologies="React"
           scrollTime="1s"
         />
         <Projects
-          projectImage={Guia}
+          projectImage={Manual}
           projectLink="http://localhost:3000/"
-          title="landing page"
+          repositoryLink="https://github.com/SixBruno99/landing-page"
+          title="Landing Page"
           description="Oi"
           technologies="React"
           scrollTime="5s"
@@ -125,12 +127,7 @@ export function Home() {
           title="CV"
           scrollTime="2s"
         />
-        <Projects
-          projectImage={Curriculo}
-          projectLink="https://brunohenrique.netlify.app/"
-          title="CV"
-          scrollTime="2s"
-        />
+        <Projects projectImage={Curriculo} title="CV" scrollTime="2s" />
         <Projects projectImage={Curriculo} scrollTime="2s" />
       </Flex>
     </Flex>

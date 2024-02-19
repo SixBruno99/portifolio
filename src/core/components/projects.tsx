@@ -5,6 +5,7 @@ interface IProjects {
   title?: string;
   projectImage?: string;
   projectLink?: string;
+  repositoryLink?: string;
   description?: string;
   technologies?: string;
   scrollTime: string;
@@ -14,6 +15,7 @@ export const Projects = ({
   title,
   projectImage,
   projectLink,
+  repositoryLink,
   description,
   technologies,
   scrollTime,
@@ -34,7 +36,7 @@ export const Projects = ({
       borderRadius="50px"
     >
       <Box
-        width="400px"
+        width="500px"
         overflow="hidden"
         position="relative"
         borderTopRadius="50px"
@@ -44,11 +46,11 @@ export const Projects = ({
           backgroundImage: `url(${projectImage})`,
           backgroundPosition: isHovered ? "0 100%" : "0 0",
           transition: `background-position ${scrollTime} ease`,
-          backgroundSize: "400px auto",
+          backgroundSize: "500px auto",
           height: "400px",
         }}
       ></Box>
-      <Flex flexDirection="column" gap={4} marginX={8} marginY={6}>
+      <Flex flexDirection="column" gap={4} marginX={8} marginTop={6}>
         <Text color="white" fontSize="1rem" opacity="0.5">
           {technologies}
         </Text>
@@ -59,15 +61,27 @@ export const Projects = ({
           {description}
         </Text>
       </Flex>
-      <Flex gap={4} marginX={8} marginY={6}>
-        <Button
-          onClick={() => {
-            handleNavigate(projectLink);
-          }}
-        >
-          Vizitar site
-        </Button>
-        <Button onClick={() => {}}>Repositório</Button>
+      <Flex marginY={10} marginX={8} gap={4} justifyContent="center">
+        {projectLink && (
+          <Button
+            width="120px"
+            onClick={() => {
+              handleNavigate(projectLink);
+            }}
+          >
+            Vizualizar
+          </Button>
+        )}
+        {repositoryLink && (
+          <Button
+            width="120px"
+            onClick={() => {
+              handleNavigate(repositoryLink);
+            }}
+          >
+            Repositório
+          </Button>
+        )}
       </Flex>
     </Flex>
   );
