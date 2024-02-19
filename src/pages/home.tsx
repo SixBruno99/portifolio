@@ -10,6 +10,7 @@ import {
 
 import { SocialMedias } from "../core/components/social";
 import { Projects } from "../core/components/projects";
+import { IProjects } from "../types/projects/interface";
 
 // Images imports
 import Foto from "../assets/Images/foto.jpg";
@@ -53,6 +54,57 @@ export function Home() {
   const textAnimation = prefersReducedMotion
     ? `${textInitialization} 1 1.5s ease-in`
     : undefined;
+
+  const PROJECTS_PROPS: Array<IProjects> = [
+    {
+      projectImage: Curriculo,
+      projectLink: "https://brunohenrique.netlify.app/",
+      repositoryLink: "https://github.com/SixBruno99/Curriculo",
+      title: "Currículo programado",
+      description: "Oi",
+      technologies: "React",
+      scrollTime: "1s",
+    },
+    {
+      projectImage: Manual,
+      projectLink: "http://localhost:3000/",
+      repositoryLink: "https://github.com/SixBruno99/landing-page",
+      title: "Landing Page",
+      description: "Oi",
+      technologies: "React",
+      scrollTime: "5s",
+    },
+    {
+      projectImage: Curriculo,
+      projectLink: "https://brunohenrique.netlify.app/",
+      repositoryLink: "https://github.com/SixBruno99/Curriculo",
+      title: "Currículo programado",
+      description: "Oi",
+      technologies: "React",
+      scrollTime: "1s",
+    },
+    {
+      projectImage: Curriculo,
+      projectLink: "https://brunohenrique.netlify.app/",
+      repositoryLink: "https://github.com/SixBruno99/Curriculo",
+      title: "Currículo programado",
+      description: "Oi",
+      technologies: "React",
+      scrollTime: "1s",
+    },
+    {
+      projectImage: Curriculo,
+      projectLink: "https://brunohenrique.netlify.app/",
+      title: "Currículo programado",
+      technologies: "React",
+      scrollTime: "1s",
+    },
+    {
+      projectImage: Curriculo,
+      title: "Currículo programado",
+      scrollTime: "1s",
+    },
+  ];
 
   return (
     <Flex
@@ -103,32 +155,18 @@ export function Home() {
       </Heading>
 
       <Flex maxWidth="full" minWidth="7xl" overflowX="scroll" gap={5}>
-        <Projects
-          projectImage={Curriculo}
-          projectLink="https://brunohenrique.netlify.app/"
-          repositoryLink="https://github.com/SixBruno99/Curriculo"
-          title="Currículo programado"
-          description="Oi"
-          technologies="React"
-          scrollTime="1s"
-        />
-        <Projects
-          projectImage={Manual}
-          projectLink="http://localhost:3000/"
-          repositoryLink="https://github.com/SixBruno99/landing-page"
-          title="Landing Page"
-          description="Oi"
-          technologies="React"
-          scrollTime="5s"
-        />
-        <Projects
-          projectImage={Curriculo}
-          projectLink="https://brunohenrique.netlify.app/"
-          title="CV"
-          scrollTime="2s"
-        />
-        <Projects projectImage={Curriculo} title="CV" scrollTime="2s" />
-        <Projects projectImage={Curriculo} scrollTime="2s" />
+        {PROJECTS_PROPS.map((project, index) => (
+          <Projects
+            key={index}
+            title={project.title}
+            projectImage={project.projectImage}
+            projectLink={project.projectLink}
+            repositoryLink={project.repositoryLink}
+            description={project.description}
+            technologies={project.technologies}
+            scrollTime={project.scrollTime}
+          />
+        ))}
       </Flex>
     </Flex>
   );
