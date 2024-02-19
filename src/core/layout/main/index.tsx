@@ -10,7 +10,7 @@ export function MainLayout() {
       <Flex
         width="full"
         minHeight="calc(100vh - 112px)"
-        backgroundColor="#F5F5F5"
+        bgGradient="linear(to-b, #232D3F, #0B666A)"
       >
         <Outlet />
       </Flex>
