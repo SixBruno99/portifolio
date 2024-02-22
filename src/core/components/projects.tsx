@@ -1,15 +1,6 @@
-import { useState } from "react";
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-
-interface IProjects {
-  title?: string;
-  projectImage?: string;
-  projectLink?: string;
-  repositoryLink?: string;
-  description?: string;
-  technologies?: string;
-  scrollTime: string;
-}
+import { useState } from "react";
+import { IProjects } from "../../types/projects/interface";
 
 export const Projects = ({
   title,
