@@ -2,15 +2,7 @@ import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { IProjects } from "../../types/projects/interface";
 
-export const Projects = ({
-  title,
-  projectImage,
-  projectLink,
-  repositoryLink,
-  description,
-  technologies,
-  scrollTime,
-}: IProjects) => {
+export const Projects = (project: IProjects) => {
   const [isHovered, setIsHovered] = useState(false);
 
   function handleNavigate(navigator: string | undefined) {
@@ -20,11 +12,12 @@ export const Projects = ({
 
   return (
     <Flex
-      my="2rem"
-      gap="1rem"
+      my="4rem"
+      width="500px"
       flexDirection="column"
       backgroundColor="#252933"
       borderRadius="50px"
+      marginX="auto"
     >
       <Box
         width="500px"
@@ -34,40 +27,40 @@ export const Projects = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
-          backgroundImage: `url(${projectImage})`,
+          backgroundImage: `url(${project.image})`,
           backgroundPosition: isHovered ? "0 100%" : "0 0",
-          transition: `background-position ${scrollTime} ease`,
+          transition: `background-position ${project.scrollTime} ease`,
           backgroundSize: "500px auto",
           height: "400px",
         }}
       ></Box>
       <Flex flexDirection="column" gap={4} marginX={8} marginTop={6}>
         <Text color="white" fontSize="1rem" opacity="0.5">
-          {technologies}
+          {project.technologies}
         </Text>
         <Heading color="white" fontSize="2rem">
-          {title}
+          {project.title}
         </Heading>
         <Text color="white" fontSize="1.25rem">
-          {description}
+          {project.description}
         </Text>
       </Flex>
       <Flex marginY={10} marginX={8} gap={4} justifyContent="center">
-        {projectLink && (
+        {project.link && (
           <Button
             width="120px"
             onClick={() => {
-              handleNavigate(projectLink);
+              handleNavigate(project.link);
             }}
           >
             Vizualizar
           </Button>
         )}
-        {repositoryLink && (
+        {project.repositoryUrl && (
           <Button
             width="120px"
             onClick={() => {
-              handleNavigate(repositoryLink);
+              handleNavigate(project.repositoryUrl);
             }}
           >
             Repositório

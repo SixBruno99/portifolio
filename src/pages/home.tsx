@@ -8,6 +8,17 @@ import {
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
 
+// Styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+
+// Libraries
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
+
+// Components
 import { SocialMedias } from "../core/components/social";
 import { Projects } from "../core/components/projects";
 import { IProjects } from "../types/projects/interface";
@@ -55,52 +66,58 @@ export function Home() {
     ? `${textInitialization} 1 1.5s ease-in`
     : undefined;
 
-  const PROJECTS_PROPS: Array<IProjects> = [
+  const PROJECTS_PROPS: IProjects[] = [
     {
-      projectImage: Curriculo,
-      projectLink: "https://brunohenrique.netlify.app/",
-      repositoryLink: "https://github.com/SixBruno99/Curriculo",
+      id: "1",
+      image: Curriculo,
+      link: "https://brunohenrique.netlify.app/",
+      repositoryUrl: "https://github.com/SixBruno99/Curriculo",
       title: "Currículo programado",
       description: "Oi",
-      technologies: "React",
+      technologies: "React | Chakra-ui",
       scrollTime: "1s",
     },
     {
-      projectImage: Manual,
-      projectLink: "http://localhost:3000/",
-      repositoryLink: "https://github.com/SixBruno99/landing-page",
+      id: "2",
+      image: Manual,
+      link: "http://localhost:3000/",
+      repositoryUrl: "https://github.com/SixBruno99/landing-page",
       title: "Landing Page",
       description: "Oi",
-      technologies: "React",
+      technologies: "React | Chakra-ui",
       scrollTime: "5s",
     },
     {
-      projectImage: Curriculo,
-      projectLink: "https://brunohenrique.netlify.app/",
-      repositoryLink: "https://github.com/SixBruno99/Curriculo",
+      id: "3",
+      image: Curriculo,
+      link: "https://brunohenrique.netlify.app/",
+      repositoryUrl: "https://github.com/SixBruno99/Curriculo",
       title: "Currículo programado",
       description: "Oi",
       technologies: "React",
       scrollTime: "1s",
     },
     {
-      projectImage: Curriculo,
-      projectLink: "https://brunohenrique.netlify.app/",
-      repositoryLink: "https://github.com/SixBruno99/Curriculo",
+      id: "4",
+      image: Curriculo,
+      link: "https://brunohenrique.netlify.app/",
+      repositoryUrl: "https://github.com/SixBruno99/Curriculo",
       title: "Currículo programado",
       description: "Oi",
       technologies: "React",
       scrollTime: "1s",
     },
     {
-      projectImage: Curriculo,
-      projectLink: "https://brunohenrique.netlify.app/",
+      id: "5",
+      image: Curriculo,
+      link: "https://brunohenrique.netlify.app/",
       title: "Currículo programado",
       technologies: "React",
       scrollTime: "1s",
     },
     {
-      projectImage: Curriculo,
+      id: "6",
+      image: Curriculo,
       title: "Currículo programado",
       scrollTime: "1s",
     },
@@ -117,7 +134,6 @@ export function Home() {
       justifyContent="center"
       flexDirection="column"
     >
-      <a href="#footer">nav</a>
       <Flex width="full" justifyContent="space-evenly">
         <Box marginY="auto">
           <Text
@@ -150,23 +166,43 @@ export function Home() {
         </Box>
       </Flex>
 
-      <Heading marginY={12} color="white">
+      <Heading id="projetos" marginY={12} color="white">
         Projects
       </Heading>
 
-      <Flex maxWidth="full" minWidth="7xl" overflowX="scroll" gap={5}>
-        {PROJECTS_PROPS.map((project, index) => (
-          <Projects
-            key={index}
-            title={project.title}
-            projectImage={project.projectImage}
-            projectLink={project.projectLink}
-            repositoryLink={project.repositoryLink}
-            description={project.description}
-            technologies={project.technologies}
-            scrollTime={project.scrollTime}
-          />
-        ))}
+      <Flex maxWidth="full" minWidth="7xl">
+        <Swiper
+          slidesPerView={2}
+          grabCursor={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: true,
+          }}
+          keyboard={{
+            enabled: true,
+          }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          navigation
+          modules={[Pagination, Keyboard, Navigation, Autoplay]}
+        >
+          {PROJECTS_PROPS.map((project, index) => (
+            <SwiperSlide data-hash={`slide${index}`} key={project.id}>
+              <Projects
+                id={project.id}
+                title={project.title}
+                image={project.image}
+                link={project.link}
+                repositoryUrl={project.repositoryUrl}
+                description={project.description}
+                technologies={project.technologies}
+                scrollTime={project.scrollTime}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Flex>
     </Flex>
   );
