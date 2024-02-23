@@ -13,16 +13,15 @@ export const Projects = (project: IProjects) => {
   return (
     <Flex
       my="4rem"
-      width="500px"
+      width="524px"
       flexDirection="column"
       backgroundColor="#252933"
       borderRadius="50px"
       marginX="auto"
     >
       <Box
-        width="500px"
+        width="524px"
         overflow="hidden"
-        position="relative"
         borderTopRadius="50px"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -30,7 +29,7 @@ export const Projects = (project: IProjects) => {
           backgroundImage: `url(${project.image})`,
           backgroundPosition: isHovered ? "0 100%" : "0 0",
           transition: `background-position ${project.scrollTime} ease`,
-          backgroundSize: "500px auto",
+          backgroundSize: "524px auto",
           height: "400px",
         }}
       ></Box>

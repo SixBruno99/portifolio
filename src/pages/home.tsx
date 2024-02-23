@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "../style/swiper.css"
 
 // Libraries
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -129,7 +130,6 @@ export function Home() {
       maxWidth="7xl"
       marginY={8}
       marginX="auto"
-      paddingInline="5"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
