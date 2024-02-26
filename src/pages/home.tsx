@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-import "../style/swiper.css"
+import "../style/swiper.css";
 
 // Libraries
 import { Swiper, SwiperSlide } from "swiper/react";
