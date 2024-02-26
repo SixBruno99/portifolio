@@ -30,52 +30,50 @@ export const Projects = (project: IProjects) => {
           backgroundSize: "534px auto",
           height: "440px",
         }}
-      >
-        <Box
-          padding={6}
-          marginTop="440px"
-          backgroundColor="#252933"
-          borderBottomRadius="50px"
-        >
-          <Flex flexDirection="column" width="full" gap={4}>
-            <Text color="white" fontSize="1rem" opacity="0.5">
-              {project.technologies}
-            </Text>
-            <Heading color="white" fontSize="2rem">
-              {project.title}
-            </Heading>
-            <Text color="white" fontSize="1.25rem">
-              {project.description}
-              {project.collaborator && (
-                <Link href={project.collaborator.instagram} isExternal>
-                  {project.collaborator.name}
-                </Link>
-              )}
-            </Text>
-          </Flex>
-          <Flex width="full" marginY={10} gap={4} justifyContent="center">
-            {project.link && (
-              <Button
-                width="120px"
-                onClick={() => {
-                  handleNavigate(project.link);
-                }}
+      ></Box>
+      <Box padding={6} backgroundColor="#252933" borderBottomRadius="50px">
+        <Flex flexDirection="column" width="full" gap={4}>
+          <Text color="white" fontSize="1rem" opacity="0.5">
+            {project.technologies}
+          </Text>
+          <Heading color="white" fontSize="2rem">
+            {project.title}
+          </Heading>
+          <Text color="white" fontSize="1.25rem">
+            {project.description}
+            {project.collaborator && (
+              <Link
+                href={project.collaborator.instagram}
+                fontWeight="bold"
+                isExternal
               >
-                Vizualizar
-              </Button>
+                {project.collaborator.name}
+              </Link>
             )}
-            {project.repositoryUrl && (
-              <Button
-                width="120px"
-                onClick={() => {
-                  handleNavigate(project.repositoryUrl);
-                }}
-              >
-                Repositório
-              </Button>
-            )}
-          </Flex>
-        </Box>
+          </Text>
+        </Flex>
+        <Flex width="full" marginY={10} gap={4} justifyContent="center">
+          {project.link && (
+            <Button
+              width="120px"
+              onClick={() => {
+                handleNavigate(project.link);
+              }}
+            >
+              Vizualizar
+            </Button>
+          )}
+          {project.repositoryUrl && (
+            <Button
+              width="120px"
+              onClick={() => {
+                handleNavigate(project.repositoryUrl);
+              }}
+            >
+              Repositório
+            </Button>
+          )}
+        </Flex>
       </Box>
     </Flex>
   );
