@@ -28,19 +28,20 @@ import { IProjects } from "../types/projects/interface";
 import Foto from "../assets/Images/foto.jpg";
 import Curriculo from "../assets/Images/curriculo.png";
 import Manual from "../assets/Images/manual-leticia.png";
+import { About } from "../core/components/about";
 
-const imageChange = keyframes`
-  0% {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
-  }
-  100% {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  }
+// const imageChange = keyframes`
+//   0% {
+//     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+//   }
+//   50% {
+//     clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+//   }
+//   100% {
+//     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+//   }
 
-`;
+// `;
 
 const textInitialization = keyframes`
   0% {
@@ -59,9 +60,9 @@ const textInitialization = keyframes`
 export function Home() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  const imageAnimation = prefersReducedMotion
-    ? `${imageChange} infinite 3s ease-in`
-    : undefined;
+  // const imageAnimation = prefersReducedMotion
+  //   ? `${imageChange} infinite 3s ease-in`
+  //   : undefined;
 
   const textAnimation = prefersReducedMotion
     ? `${textInitialization} 1 1.5s ease-in`
@@ -74,7 +75,8 @@ export function Home() {
       link: "https://brunohenrique.netlify.app/",
       repositoryUrl: "https://github.com/SixBruno99/Curriculo",
       title: "Currículo programado",
-      description: "Oi",
+      description:
+        "Projeto a fim de por em prática os conhecimentos adquiridos durante minha carreira",
       technologies: "React | Chakra-ui",
       scrollTime: "1s",
     },
@@ -84,7 +86,11 @@ export function Home() {
       link: "http://localhost:3000/",
       repositoryUrl: "https://github.com/SixBruno99/landing-page",
       title: "Landing Page",
-      description: "Oi",
+      description: "Landing-page feito em parceria com a desenvolvedora ",
+      collaborator: {
+        name: "@lletcode",
+        instagram: "https://www.instagram.com/lletcode/",
+      },
       technologies: "React | Chakra-ui",
       scrollTime: "5s",
     },
@@ -94,7 +100,8 @@ export function Home() {
       link: "https://brunohenrique.netlify.app/",
       repositoryUrl: "https://github.com/SixBruno99/Curriculo",
       title: "Currículo programado",
-      description: "Oi",
+      description:
+        "Projeto a fim de por em prática os conhecimentos adquiridos durante minha carreira",
       technologies: "React",
       scrollTime: "1s",
     },
@@ -104,7 +111,8 @@ export function Home() {
       link: "https://brunohenrique.netlify.app/",
       repositoryUrl: "https://github.com/SixBruno99/Curriculo",
       title: "Currículo programado",
-      description: "Oi",
+      description:
+        "Projeto a fim de por em prática os conhecimentos adquiridos durante minha carreira",
       technologies: "React",
       scrollTime: "1s",
     },
@@ -162,11 +170,16 @@ export function Home() {
           </Flex>
         </Box>
         <Box>
-          <Image animation={imageAnimation} src={Foto} width="300" h="400" />
+          <Image
+            src={Foto}
+            width="300"
+            height="400"
+            // animation={imageAnimation}
+          />
         </Box>
       </Flex>
 
-      <Heading id="projetos" marginY={12} color="white">
+      <Heading id="projects" marginY={12} color="white">
         Projects
       </Heading>
 
@@ -175,7 +188,7 @@ export function Home() {
           slidesPerView={2}
           grabCursor={true}
           autoplay={{
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: true,
           }}
           keyboard={{
@@ -197,6 +210,7 @@ export function Home() {
                 link={project.link}
                 repositoryUrl={project.repositoryUrl}
                 description={project.description}
+                collaborator={project.collaborator}
                 technologies={project.technologies}
                 scrollTime={project.scrollTime}
               />
@@ -204,6 +218,12 @@ export function Home() {
           ))}
         </Swiper>
       </Flex>
+
+      <Heading id="about" marginY={12} color="white">
+        Sobre mim
+      </Heading>
+
+      <About />
     </Flex>
   );
 }

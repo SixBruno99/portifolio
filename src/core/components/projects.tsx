@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { IProjects } from "../../types/projects/interface";
 
@@ -13,14 +13,13 @@ export const Projects = (project: IProjects) => {
   return (
     <Flex
       height="732px"
-      width="524px"
+      width="534px"
       marginY="4rem"
       marginX="auto"
       borderRadius="50px"
       flexDirection="column"
     >
       <Box
-        width="524px"
         borderTopRadius="50px"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -28,7 +27,7 @@ export const Projects = (project: IProjects) => {
           backgroundImage: `url(${project.image})`,
           backgroundPosition: isHovered ? "0 100%" : "0 0",
           transition: `background-position ${project.scrollTime} ease`,
-          backgroundSize: "524px auto",
+          backgroundSize: "534px auto",
           height: "440px",
         }}
       >
@@ -47,6 +46,11 @@ export const Projects = (project: IProjects) => {
             </Heading>
             <Text color="white" fontSize="1.25rem">
               {project.description}
+              {project.collaborator && (
+                <Link href={project.collaborator.instagram} isExternal>
+                  {project.collaborator.name}
+                </Link>
+              )}
             </Text>
           </Flex>
           <Flex width="full" marginY={10} gap={4} justifyContent="center">

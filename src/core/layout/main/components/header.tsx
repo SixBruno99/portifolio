@@ -22,7 +22,7 @@ export function Header() {
             </Text>
           </Link>
           <Link
-            to="projetos"
+            to="projects"
             activeClass="active"
             smooth={true}
             spy={true}
@@ -33,7 +33,7 @@ export function Header() {
             </Text>
           </Link>
           <Link
-            to="footer"
+            to="about"
             activeClass="active"
             smooth={true}
             spy={true}
