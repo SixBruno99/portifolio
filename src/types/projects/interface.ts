@@ -5,6 +5,10 @@ export interface IProjects {
   link?: string;
   repositoryUrl?: string;
   description?: string;
+  collaborator?: {
+    name: string;
+    instagram: string;
+  };
   technologies?: string;
   scrollTime: string;
 }
