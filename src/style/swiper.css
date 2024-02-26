@@ -1,0 +1,10 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: wheat;
+  font-weight: bold;
+  margin-inline: -8px;
+}
+
+.swiper-pagination-bullet-active {
+    background: wheat;
+}
