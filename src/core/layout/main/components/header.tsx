@@ -22,6 +22,17 @@ export function Header() {
             </Text>
           </Link>
           <Link
+            to="technologies"
+            activeClass="active"
+            smooth={true}
+            spy={true}
+            offset={0}
+          >
+            <Text fontSize="18px" fontWeight="bold" color="white">
+              Tecnologias
+            </Text>
+          </Link>
+          <Link
             to="projects"
             activeClass="active"
             smooth={true}
