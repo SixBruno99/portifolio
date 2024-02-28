@@ -54,6 +54,17 @@ export function Header() {
               Sobre
             </Text>
           </Link>
+          <Link
+            to="contacts"
+            activeClass="active"
+            smooth={true}
+            spy={true}
+            offset={0}
+          >
+            <Text fontSize="18px" fontWeight="bold" color="white">
+              Contato
+            </Text>
+          </Link>
         </Flex>
       </Flex>
     </Flex>
