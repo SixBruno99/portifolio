@@ -55,10 +55,10 @@ export function Home() {
     : undefined;
 
   return (
-    <Flex 
+    <Flex
       minHeight="calc(100vh - 112px)"
       maxWidth="7xl"
-      marginY={8}
+      marginY={12}
       marginX="auto"
       alignItems="center"
       justifyContent="center"
@@ -87,16 +87,10 @@ export function Home() {
             <br />
             Desenvolvimento Web de Alto Nível.
           </Text>
-          <Flex>
-            <SocialMedias />
-          </Flex>
+          <SocialMedias />
         </Box>
         <Box>
-          <Image
-            src={Foto}
-            width="300"
-            height="400"
-          />
+          <Image src={Foto} width="300" height="400" />
         </Box>
       </Flex>
 
@@ -104,14 +98,19 @@ export function Home() {
         Tecnologias
       </Heading>
 
-      <Grid width="full" templateColumns='repeat(4, 1fr)' gap={4}>
+      <Grid width="full" templateColumns="repeat(4, 1fr)" gap={4}>
         {SKILLS_PROPS.map((skill, index) => (
-          <Skills key={index} id={skill.id} title={skill.title} icon={skill.icon} />
+          <Skills
+            key={index}
+            id={skill.id}
+            title={skill.title}
+            icon={skill.icon}
+          />
         ))}
       </Grid>
 
       <Heading id="projects" marginY={12} color="white">
-        Projects
+        Projetos desenvolvidos
       </Heading>
 
       <Flex maxWidth="full" minWidth="7xl">
@@ -151,10 +150,17 @@ export function Home() {
       </Flex>
 
       <Heading id="about" marginY={12} color="white">
-        Sobre mim
+        Um pouco mais sobre mim
       </Heading>
 
       <About />
+
+      <Heading id="contacts" marginTop={16} color="white" textAlign="center">
+        Vamos trabalhar juntos?
+        <br /> Entre em contato!
+      </Heading>
+
+      <SocialMedias instagram />
     </Flex>
   );
 }

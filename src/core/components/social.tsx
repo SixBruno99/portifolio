@@ -1,11 +1,16 @@
 import { HStack, IconButton } from "@chakra-ui/react";
 
-// Icons
-import { RiGithubFill } from "react-icons/ri";
-import { RiWhatsappLine } from "react-icons/ri";
-import { RiLinkedinBoxFill } from "react-icons/ri";
+import { IContacts } from "../../types/contacts/interface";
 
-export const SocialMedias = () => {
+// Icons
+import {
+  RiGithubFill,
+  RiWhatsappLine,
+  RiLinkedinBoxFill,
+  RiInstagramFill,
+} from "react-icons/ri";
+
+export const SocialMedias = (contacts?: IContacts) => {
   return (
     <HStack py="1rem" gap="1rem">
       <IconButton
@@ -60,6 +65,24 @@ export const SocialMedias = () => {
       >
         <RiWhatsappLine size={32} />
       </IconButton>
+      {contacts?.instagram && (
+        <IconButton
+          aria-label="instagram-ib"
+          variant="none"
+          color="white"
+          cursor="pointer"
+          _hover={{
+            transform: "scale(1.5)",
+            transition: "transform 0.2s ease-in-out",
+            color: "#E63772",
+          }}
+          onClick={() =>
+            window.open("https://www.instagram.com/_brunohfc", "_blank")
+          }
+        >
+          <RiInstagramFill size={32} />
+        </IconButton>
+      )}
     </HStack>
   );
 };
