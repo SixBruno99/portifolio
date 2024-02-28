@@ -1,3 +1,8 @@
+import { ElementType } from "react";
+
 export interface IContacts {
-    instagram?: boolean
+  name: string;
+  link: string;
+  color: string;
+  icon: ElementType;
 }

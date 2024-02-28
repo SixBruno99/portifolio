@@ -2,6 +2,7 @@ import {
   Box,
   Flex,
   Grid,
+  HStack,
   Heading,
   Image,
   Text,
@@ -27,6 +28,10 @@ import { Skills } from "../core/components/skills";
 import { About } from "../core/components/about";
 
 // Mocks
+import {
+  FINAL_CONTACTS_PROPS,
+  INITIAL_CONTACTS_PROPS,
+} from "../mocks/contacts";
 import { PROJECTS_PROPS } from "../mocks/projects";
 import { SKILLS_PROPS } from "../mocks/skills";
 
@@ -87,7 +92,17 @@ export function Home() {
             <br />
             Desenvolvimento Web de Alto Nível.
           </Text>
-          <SocialMedias />
+          <HStack py="1rem" gap="1rem">
+            {INITIAL_CONTACTS_PROPS.map((contact, index) => (
+              <SocialMedias
+                key={index}
+                name={contact.name}
+                link={contact.link}
+                color={contact.color}
+                icon={contact.icon}
+              />
+            ))}
+          </HStack>
         </Box>
         <Box>
           <Image src={Foto} width="300" height="400" />
@@ -160,7 +175,17 @@ export function Home() {
         <br /> Entre em contato!
       </Heading>
 
-      <SocialMedias instagram />
+      <HStack py="1rem" gap="1rem">
+        {FINAL_CONTACTS_PROPS.map((contact, index) => (
+          <SocialMedias
+            key={index}
+            name={contact.name}
+            link={contact.link}
+            color={contact.color}
+            icon={contact.icon}
+          />
+        ))}
+      </HStack>
     </Flex>
   );
 }
