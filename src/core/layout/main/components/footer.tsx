@@ -9,7 +9,7 @@ export function Footer() {
       justifyContent="center"
       width="full"
       height="14"
-      backgroundColor="#0B666A"
+      backgroundColor="#3A506B"
     >
       <Text
         fontWeight="semibold"

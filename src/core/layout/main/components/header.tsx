@@ -1,4 +1,6 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
+
+// Logo file import
 import Logo from "/src/assets/favicon-header.ico";
 
 // Libraries
@@ -6,10 +8,23 @@ import { Link } from "react-scroll";
 
 export function Header() {
   return (
-    <Flex backgroundColor="#232D3F" justifyContent="center" height="14">
-      <Flex width="7xl" justifyContent="space-between" alignItems="center">
+    <Flex backgroundColor="#232D3F" justifyContent="center">
+      <Flex
+        width="7xl"
+        paddingY={6}
+        paddingX={16}
+        alignItems="center"
+        justifyContent="space-between"
+      >
         <Image src={Logo} />
-        <Flex gap={4}>
+        <Flex
+          gap={6}
+          paddingY={4}
+          paddingX={8}
+          bgGradient="linear-gradient(to right, #232D3F, #3A506B, #3A506B, #3A506B, #3A506B, #232D3F)"
+          rounded="lg"
+          fontSize="18px"
+        >
           <Link
             to="footer"
             activeClass="active"
@@ -17,19 +32,13 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontSize="18px" fontWeight="bold" color="white">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Home
-            </Text>
-          </Link>
-          <Link
-            to="technologies"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            offset={0}
-          >
-            <Text fontSize="18px" fontWeight="bold" color="white">
-              Tecnologias
             </Text>
           </Link>
           <Link
@@ -39,7 +48,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontSize="18px" fontWeight="bold" color="white">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Projetos
             </Text>
           </Link>
@@ -50,7 +64,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontSize="18px" fontWeight="bold" color="white">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Sobre
             </Text>
           </Link>
@@ -61,7 +80,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontSize="18px" fontWeight="bold" color="white">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Contato
             </Text>
           </Link>

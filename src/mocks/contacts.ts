@@ -16,14 +16,14 @@ export const INITIAL_CONTACTS_PROPS: IContacts[] = [
     icon: RiGithubFill,
   },
   {
-    name: "linkedin",
-    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho-cec%C3%ADlio-811858222/",
+    name: "whatsapp",
+    link: "https://api.whatsapp.com/send/?phone=5561981030795&text&type=phone_number&app_absent=0",
     color: "#25D366",
     icon: RiWhatsappLine,
   },
   {
-    name: "whatsapp",
-    link: "https://api.whatsapp.com/send/?phone=5561981030795&text&type=phone_number&app_absent=0",
+    name: "linkedin",
+    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho-cec%C3%ADlio-811858222/",
     color: "#0077B5",
     icon: RiLinkedinBoxFill,
   },
@@ -37,15 +37,15 @@ export const FINAL_CONTACTS_PROPS: IContacts[] = [
     icon: RiGithubFill,
   },
   {
-    name: "linkedin",
-    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho-cec%C3%ADlio-811858222/",
-    color: "#0077B5",
-    icon: RiWhatsappLine,
-  },
-  {
     name: "whatsapp",
     link: "https://api.whatsapp.com/send/?phone=5561981030795&text&type=phone_number&app_absent=0",
     color: "#25D366",
+    icon: RiWhatsappLine,
+  },
+  {
+    name: "linkedin",
+    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho-cec%C3%ADlio-811858222/",
+    color: "#0077B5",
     icon: RiLinkedinBoxFill,
   },
   {
