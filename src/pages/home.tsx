@@ -108,7 +108,7 @@ export function Home() {
         </Box>
       </Flex>
 
-      <Heading id="technologies" marginY={12} color="white">
+      <Heading id="technologies" marginY={12} color="white" fontStyle="italic">
         Tecnologias
       </Heading>
 
@@ -123,7 +123,7 @@ export function Home() {
         ))}
       </Grid>
 
-      <Heading id="projects" marginY={12} color="white">
+      <Heading id="projects" marginY={12} color="white" fontStyle="italic">
         Projetos desenvolvidos
       </Heading>
 
@@ -163,13 +163,19 @@ export function Home() {
         </Swiper>
       </Flex>
 
-      <Heading id="about" marginY={12} color="white">
+      <Heading id="about" marginY={12} color="white" fontStyle="italic">
         Um pouco mais sobre mim
       </Heading>
 
       <About />
 
-      <Heading id="contacts" marginTop={16} color="white" textAlign="center">
+      <Heading
+        id="contacts"
+        marginTop={16}
+        color="white"
+        textAlign="center"
+        fontStyle="italic"
+      >
         Vamos trabalhar juntos?
         <br /> Entre em contato!
       </Heading>

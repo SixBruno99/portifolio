@@ -1,4 +1,6 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
+
+// Logo file import
 import Logo from "/src/assets/favicon-header.ico";
 
 // Libraries
@@ -19,7 +21,7 @@ export function Header() {
           gap={6}
           paddingY={4}
           paddingX={8}
-          backgroundColor="rgba(217, 217, 217, 0.08)"
+          bgGradient="linear-gradient(to right, #232D3F, #3A506B, #3A506B, #3A506B, #3A506B, #232D3F)"
           rounded="lg"
           fontSize="18px"
         >
@@ -30,7 +32,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontWeight="bold" color="white" cursor="pointer">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Home
             </Text>
           </Link>
@@ -41,7 +48,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontWeight="bold" color="white" cursor="pointer">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Projetos
             </Text>
           </Link>
@@ -52,7 +64,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontWeight="bold" color="white" cursor="pointer">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Sobre
             </Text>
           </Link>
@@ -63,7 +80,12 @@ export function Header() {
             spy={true}
             offset={0}
           >
-            <Text fontWeight="bold" color="white" cursor="pointer">
+            <Text
+              _hover={{ color: "#3DD6BB" }}
+              fontWeight="bold"
+              color="white"
+              cursor="pointer"
+            >
               Contato
             </Text>
           </Link>
