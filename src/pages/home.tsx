@@ -88,9 +88,8 @@ export function Home() {
             Front End Developer
           </Text>
           <Text marginTop={4} color="#F5F5F5" animation={textAnimation}>
-            Criando Interfaces Intuitivas e Experiências Incríveis no
-            <br />
-            Desenvolvimento Web de Alto Nível.
+            Criando Interfaces intuitivas para o usuário <br /> com uma
+            Experiências incríveis.
           </Text>
           <HStack py="1rem" gap="1rem">
             {INITIAL_CONTACTS_PROPS.map((contact, index) => (
