@@ -5,7 +5,7 @@ import { IContacts } from "../../types/contacts/interface";
 export const SocialMedias = (contacts?: IContacts) => {
   return (
     <IconButton
-      aria-label={"icon-ib"}
+      aria-label="icon-ib"
       variant="none"
       color="white"
       cursor="pointer"
