@@ -25,7 +25,7 @@ export function Header() {
           rounded="lg"
           fontSize="18px"
         >
-          <Link
+          {/* <Link
             to="footer"
             activeClass="active"
             smooth={true}
@@ -40,7 +40,7 @@ export function Header() {
             >
               Home
             </Text>
-          </Link>
+          </Link> */}
           <Link
             to="projects"
             activeClass="active"

@@ -4,7 +4,6 @@ import {
   Grid,
   HStack,
   Heading,
-  Image,
   Text,
   keyframes,
   usePrefersReducedMotion,
@@ -22,7 +21,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
 
 // Components
-import { SocialMedias } from "../core/components/social";
+import { AnimatedText } from "../core/components/animated-text";
+import { SocialMedias } from "../core/components/social-medias";
+import { ImageEffect } from "../core/components/image-effect";
 import { Projects } from "../core/components/projects";
 import { Skills } from "../core/components/skills";
 import { About } from "../core/components/about";
@@ -34,9 +35,6 @@ import {
 } from "../mocks/contacts";
 import { PROJECTS_PROPS } from "../mocks/projects";
 import { SKILLS_PROPS } from "../mocks/skills";
-
-// Images imports
-import Foto from "../assets/Images/foto.jpg";
 
 const textInitialization = keyframes`
   0% {
@@ -61,24 +59,25 @@ export function Home() {
 
   return (
     <Flex
-      minHeight="calc(100vh - 112px)"
-      maxWidth="7xl"
       marginY={12}
+      maxWidth="7xl"
       marginX="auto"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
+      minHeight="calc(100vh - 112px)"
     >
       <Flex width="full" justifyContent="space-evenly">
         <Box marginY="auto">
-          <Text
+          {/* <Text
             fontSize="22px"
             fontWeight="bold"
             color="#F5F5F5"
             animation={textAnimation}
           >
             Bruno Henrique
-          </Text>
+          </Text> */}
+          <AnimatedText text="  Bruno Henrique" delay={100} />
           <Text
             fontSize="32px"
             fontWeight="bold"
@@ -87,9 +86,10 @@ export function Home() {
           >
             Front End Developer
           </Text>
+          {/* <AnimatedText text="  Front End Developer" delay={100} /> */}
           <Text marginTop={4} color="#F5F5F5" animation={textAnimation}>
-            Criando Interfaces intuitivas para o usuário <br /> com uma
-            Experiências incríveis.
+            Criando Interfaces intuitivas para o usuário <br /> Proporcionando
+            experiências incríveis.
           </Text>
           <HStack py="1rem" gap="1rem">
             {INITIAL_CONTACTS_PROPS.map((contact, index) => (
@@ -103,9 +103,7 @@ export function Home() {
             ))}
           </HStack>
         </Box>
-        <Box>
-          <Image src={Foto} width="300" height="400" />
-        </Box>
+        <ImageEffect />
       </Flex>
 
       <Heading id="technologies" marginY={12} color="white" fontStyle="italic">
