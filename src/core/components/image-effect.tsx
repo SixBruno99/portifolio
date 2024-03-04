@@ -15,13 +15,13 @@ export const ImageEffect = () => {
       width="300"
       overflow="hidden"
       animate={{
-        y: [5, -5, 5],
-        x: [-5, 5, -5],
+        y: [3, -3, 3],
+        x: [-3, 3, -3],
         borderRadius: ["70% 30% 70% 30% / 45% 55% 45% 55%"],
       }}
       // @ts-expect-error no problem in operation, although type error appears.
       transition={{
-        duration: 3,
+        duration: 8,
         ease: "easeInOut",
         repeat: Infinity,
         repeatType: "loop",
