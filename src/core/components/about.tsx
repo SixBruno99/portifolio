@@ -33,15 +33,17 @@ export const About = () => {
           </Text>
         </Box>
         <Text color="white" fontSize="1.25rem" margin="48px">
-          Olá, meu nome é Bruno tenho {year - 2003} anos e sou Desenvolvedor
-          Frontend com experiência em React.js, JavaScript, TypeScript, React
-          Native, Flutter, Chakra-UI, e outras tecnologias. Sou estudante de
-          Ciências da Computação e desenvolvedor Frontend.
+          Olá! Me chamo Bruno, tenho {year - 2003} anos e atuo como
+          Desenvolvedor Frontend. Tenho experiência sólida em React.js,
+          JavaScript, TypeScript, React Native, Flutter, Chakra-UI, entre outras
+          tecnologias relevantes. Atualmente, estou cursando Ciências da
+          Computação
         </Text>
         <Text color="white" fontSize="1.25rem" margin="48px">
-          Estou em busca de oportunidades para melhorar minhas habilidades
-          técnicas e desenvolver meu conhecimento participando de projetos
-          desafiadores.
+          Estou em busca de oportunidades que me permitam aprimorar minhas
+          habilidades técnicas e expandir meu conhecimento por meio de projetos
+          desafiadores. Estou entusiasmado em contribuir e crescer em um
+          ambiente dinâmico e inovador.
         </Text>
       </Box>
     </Flex>
