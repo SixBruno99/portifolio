@@ -1,23 +1,31 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useMediaQuery } from "@chakra-ui/react";
 
 // Images imports
 import Tech from "../../assets/Images/tech.jpg";
 
 export const About = () => {
-  const year = new Date().getFullYear();
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
+
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const isBeforeBirthday = currentDate < new Date(currentYear, 4, 23);
+
+  const age = isBeforeBirthday ? currentYear - 2004 : currentYear - 2003;
+
   return (
-    <Flex marginX="56px" height="476px">
-      <Image
+    <Flex marginX={isLargerThan1024 ? "56px" : "36px"} height={isLargerThan1024 ? "476px" : "full"}>
+      {isLargerThan1024 && <Image
         alt="tech"
         src={Tech}
         height="476px"
         objectFit="scale-down"
         borderLeftRadius="24px"
-      />
-      <Box borderRightRadius="24px" backgroundColor="#252933">
+      />}
+      <Box borderRadius={isLargerThan1024 ? "" : "24px"} borderRightRadius="24px" backgroundColor="#252933">
         <Box
           width="176px"
-          margin="48px"
+          marginY="48px"
+          marginX={isLargerThan1024 ? "48px" : "auto"}
           paddingX="24px"
           paddingY="16px"
           borderRadius="12px"
@@ -32,19 +40,21 @@ export const About = () => {
             Brasília - DF
           </Text>
         </Box>
-        <Text color="white" fontSize="1.25rem" margin="48px">
-          Olá! Me chamo Bruno, tenho {year - 2003} anos e atuo como
-          Desenvolvedor Frontend. Tenho experiência sólida em React.js,
-          JavaScript, TypeScript, React Native, Flutter, Chakra-UI, entre outras
-          tecnologias relevantes. Atualmente, estou cursando Ciências da
-          Computação
-        </Text>
-        <Text color="white" fontSize="1.25rem" margin="48px">
-          Estou em busca de oportunidades que me permitam aprimorar minhas
-          habilidades técnicas e expandir meu conhecimento por meio de projetos
-          desafiadores. Estou entusiasmado em contribuir e crescer em um
-          ambiente dinâmico e inovador.
-        </Text>
+        <Box maxWidth={isLargerThan1024 ? "full" : "768px"} margin={isLargerThan1024 ? "48px" : "24px"}>
+          <Text textAlign="center" color="white" fontSize={isLargerThan1024 ? "1.25rem" : "1rem"}>
+            Olá! Me chamo Bruno, tenho {age} anos e atuo como
+            Desenvolvedor Frontend. Tenho experiência sólida em React.js,
+            JavaScript, TypeScript, React Native, Flutter, Chakra-UI, entre outras
+            tecnologias relevantes. Atualmente, estou cursando Ciências da
+            Computação no CEUB.
+          </Text>
+          <Text textAlign="center" color="white" fontSize={isLargerThan1024 ? "1.25rem" : "1rem"} marginTop={isLargerThan1024 ? "48px" : "24px"}>
+            Estou em busca de oportunidades que me permitam aprimorar minhas
+            habilidades técnicas e expandir meu conhecimento por meio de projetos
+            desafiadores. Estou entusiasmado em contribuir e crescer em um
+            ambiente dinâmico e inovador.
+          </Text>
+        </Box>
       </Box>
     </Flex>
   );

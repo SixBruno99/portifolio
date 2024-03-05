@@ -1,4 +1,4 @@
-import { chakra, shouldForwardProp, Image } from "@chakra-ui/react";
+import { chakra, shouldForwardProp, Image, useMediaQuery } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 
 import Foto from "../../assets/Images/foto.jpg";
@@ -9,10 +9,12 @@ const ChakraBox = chakra(motion.div, {
 });
 
 export const ImageEffect = () => {
+  const [isLargerThan556] = useMediaQuery('(min-width: 556px)')
+
   return (
     <ChakraBox
       height="400"
-      width="300"
+      width={isLargerThan556 ? "300" : "225"}
       overflow="hidden"
       animate={{
         y: [3, -3, 3],

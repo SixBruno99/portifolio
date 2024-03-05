@@ -1,9 +1,11 @@
-import { Flex, GridItem, Icon, IconButton, Text } from "@chakra-ui/react";
+import { Flex, GridItem, Icon, IconButton, Text, useMediaQuery } from "@chakra-ui/react";
 import { ISkills } from "../../types/skills/interface";
 
 export const Skills = (skill: ISkills) => {
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+
   return (
-    <GridItem margin="auto" height="164px" width="164px">
+    <GridItem margin="auto" height={isLargerThan768 ? "164px" : "128px"} width={isLargerThan768 ? "164px" : "128px"}>
       <Flex
         height="full"
         width="full"
@@ -12,7 +14,7 @@ export const Skills = (skill: ISkills) => {
         justifyContent="Center"
         gap={6}
       >
-        <Text textColor="white" fontWeight="bold" fontSize="20px">
+        <Text textColor="white" fontWeight="bold" fontSize={isLargerThan768 ? "1.25rem" : "1rem"}>
           {skill.title}
         </Text>
         <IconButton

@@ -1,4 +1,4 @@
-import { Flex, Image, Text, chakra, shouldForwardProp } from "@chakra-ui/react";
+import { Flex, Image, Text, chakra, shouldForwardProp, useMediaQuery } from "@chakra-ui/react";
 
 // Logo file import
 import Logo from "/src/assets/favicon-header.ico";
@@ -13,12 +13,14 @@ const ChakraBox = chakra(motion.div, {
 });
 
 export function Header() {
+  const [isLargerThan556] = useMediaQuery('(min-width: 556px)')
+
   return (
     <Flex backgroundColor="#232D3F" justifyContent="center">
       <Flex
         width="7xl"
-        paddingY={6}
-        paddingX={16}
+        paddingY={isLargerThan556 ? 6 : 2}
+        paddingX={isLargerThan556 ? 16 : 12}
         alignItems="center"
         justifyContent="space-between"
       >
@@ -40,9 +42,9 @@ export function Header() {
           <Image src={Logo} />
         </ChakraBox>
         <Flex
-          gap={6}
-          paddingY={4}
-          paddingX={8}
+          gap={isLargerThan556 ? 6 : 4}
+          paddingY={isLargerThan556 ? 4 : 2}
+          paddingX={isLargerThan556 ? 8 : 4}
           bgGradient="linear-gradient(to right, #232D3F, #384C66, #384C66, #384C66, #384C66, #232D3F)"
           rounded="lg"
           fontSize="18px"
@@ -56,6 +58,7 @@ export function Header() {
           >
             <Text
               _hover={{ color: "#3DD6BB" }}
+              fontSize={isLargerThan556 ? "1rem" : "0.75rem"}
               fontWeight="bold"
               color="white"
               cursor="pointer"
@@ -72,6 +75,7 @@ export function Header() {
           >
             <Text
               _hover={{ color: "#3DD6BB" }}
+              fontSize={isLargerThan556 ? "1rem" : "0.75rem"}
               fontWeight="bold"
               color="white"
               cursor="pointer"
@@ -88,6 +92,7 @@ export function Header() {
           >
             <Text
               _hover={{ color: "#3DD6BB" }}
+              fontSize={isLargerThan556 ? "1rem" : "0.75rem"}
               fontWeight="bold"
               color="white"
               cursor="pointer"
