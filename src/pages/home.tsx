@@ -6,6 +6,7 @@ import {
   Heading,
   Text,
   keyframes,
+  useMediaQuery,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
 
@@ -51,6 +52,7 @@ const textInitialization = keyframes`
 `;
 
 export function Home() {
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const textAnimation = prefersReducedMotion
@@ -60,14 +62,14 @@ export function Home() {
   return (
     <Flex
       marginY={12}
-      maxWidth="7xl"
+      maxWidth={isLargerThan1024 ? "7xl" : "full"}
       marginX="auto"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
       minHeight="calc(100vh - 112px)"
     >
-      <Flex width="full" justifyContent="space-evenly">
+      <Flex width={isLargerThan1024 ? "full" : ""} justifyContent="space-evenly" flexDirection={isLargerThan1024 ? "row" : "column"}>
         <Box marginY="auto">
           {/* <Text
             fontSize="22px"
@@ -103,14 +105,14 @@ export function Home() {
             ))}
           </HStack>
         </Box>
-        <ImageEffect />
+          <ImageEffect />
       </Flex>
 
       <Heading id="technologies" marginY={12} color="white" fontStyle="italic">
         Tecnologias
       </Heading>
 
-      <Grid width="full" templateColumns="repeat(4, 1fr)" gap={4}>
+      <Grid width="full" templateColumns={isLargerThan1024 ? "repeat(4, 1fr)" : "repeat(2, 1fr)"} gap={4}>
         {SKILLS_PROPS.map((skill, index) => (
           <Skills
             key={index}
@@ -125,9 +127,9 @@ export function Home() {
         Projetos desenvolvidos
       </Heading>
 
-      <Flex maxWidth="full" minWidth="7xl">
+      <Flex maxWidth="full" minWidth={isLargerThan1024 ? "7xl" : "0"}>
         <Swiper
-          slidesPerView={2}
+          slidesPerView={isLargerThan1024 ? 2 : 1}
           grabCursor={true}
           autoplay={{
             delay: 3000,
@@ -140,7 +142,7 @@ export function Home() {
             clickable: true,
             dynamicBullets: true,
           }}
-          navigation
+          navigation={isLargerThan1024 ? true : false}
           modules={[Pagination, Keyboard, Navigation, Autoplay]}
         >
           {PROJECTS_PROPS.map((project, index) => (
@@ -161,7 +163,7 @@ export function Home() {
         </Swiper>
       </Flex>
 
-      <Heading id="about" marginY={12} color="white" fontStyle="italic">
+      <Heading id="about" marginY={12} color="white" fontStyle="italic" fontSize={isLargerThan1024 ? "2.5rem" : "1.75rem"}>
         Um pouco mais sobre mim
       </Heading>
 
