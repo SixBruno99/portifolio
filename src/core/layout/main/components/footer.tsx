@@ -1,6 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
     <Flex
       id="footer"
@@ -8,7 +9,7 @@ export function Footer() {
       justifyContent="center"
       width="full"
       height="14"
-      backgroundColor="#0B666A"
+      backgroundColor="#3A506B"
     >
       <Text
         fontWeight="semibold"
@@ -16,7 +17,7 @@ export function Footer() {
         textAlign="center"
         color="white"
       >
-        Develop by Bruno Henrique
+        Developed by Bruno Henrique © {year}
       </Text>
     </Flex>
   );

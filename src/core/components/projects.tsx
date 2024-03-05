@@ -1,23 +1,11 @@
+import { Box, Button, Flex, Heading, Link, Text, useMediaQuery } from "@chakra-ui/react";
 import { useState } from "react";
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { IProjects } from "../../types/projects/interface";
 
-interface IProjects {
-  title?: string;
-  projectImage?: string;
-  projectLink?: string;
-  description?: string;
-  technologies?: string;
-  scrollTime: string;
-}
-
-export const Projects = ({
-  title,
-  projectImage,
-  projectLink,
-  description,
-  technologies,
-  scrollTime,
-}: IProjects) => {
+export const Projects = (project: IProjects) => {
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
+  const [isLargerThan764] = useMediaQuery('(min-width: 764px)')
+  const [isLargerThan420] = useMediaQuery('(min-width: 420px)')
   const [isHovered, setIsHovered] = useState(false);
 
   function handleNavigate(navigator: string | undefined) {
@@ -27,48 +15,71 @@ export const Projects = ({
 
   return (
     <Flex
-      my="2rem"
-      gap="1rem"
-      flexDirection="column"
-      backgroundColor="#252933"
+      maxHeight={isLargerThan764 ? "732px" : "564px"}
+      width={isLargerThan1024 ? "534px" : isLargerThan764 ? "464px" : isLargerThan420 ? "376px" : "350px"}
+      marginY="4rem"
+      marginX="auto"
       borderRadius="50px"
+      flexDirection="column"
     >
       <Box
-        width="400px"
-        overflow="hidden"
-        position="relative"
         borderTopRadius="50px"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
-          backgroundImage: `url(${projectImage})`,
+          backgroundImage: `url(${project.image})`,
           backgroundPosition: isHovered ? "0 100%" : "0 0",
-          transition: `background-position ${scrollTime} ease`,
-          backgroundSize: "400px auto",
-          height: "400px",
+          transition: `background-position ${project.scrollTime} ease`,
+          backgroundSize: isLargerThan1024 ? "534px auto" : isLargerThan764 ? "464px auto" : isLargerThan420 ? "376px auto" : "100% auto",
+          height: isLargerThan1024 ? "440px" : isLargerThan420 ? "384px" : "300px",
         }}
       ></Box>
-      <Flex flexDirection="column" gap={4} marginX={8} marginY={6}>
-        <Text color="white" fontSize="1rem" opacity="0.5">
-          {technologies}
-        </Text>
-        <Heading color="white" fontSize="2rem">
-          {title}
-        </Heading>
-        <Text color="white" fontSize="1.25rem">
-          {description}
-        </Text>
-      </Flex>
-      <Flex gap={4} marginX={8} marginY={6}>
-        <Button
-          onClick={() => {
-            handleNavigate(projectLink);
-          }}
-        >
-          Vizitar site
-        </Button>
-        <Button onClick={() => {}}>Repositório</Button>
-      </Flex>
+      <Box padding={6} backgroundColor="#252933" borderBottomRadius="50px">
+        <Flex flexDirection="column" width="full" gap={isLargerThan764 ? 4 : 2}>
+          <Text color="white" fontSize="1rem" opacity="0.5">
+            {project.technologies}
+          </Text>
+          <Heading color="white" fontSize={isLargerThan1024 ? "2rem" : "1.5rem"}>
+            {project.title}
+          </Heading>
+          <Text color="white" fontSize={isLargerThan1024 ? "1.25rem" : "1rem"}>
+            {project.description}
+            {project.collaborator && (
+              <Link
+                href={project.collaborator.instagram}
+                fontWeight="bold"
+                isExternal
+              >
+                {project.collaborator.name}
+              </Link>
+            )}
+          </Text>
+        </Flex>
+        <Flex width="full" marginY={isLargerThan764 ? 10 : 6} gap={4} justifyContent="center">
+          {project.link && (
+            <Button
+              width={isLargerThan1024 ? "120px" : "100px"}
+              fontSize={isLargerThan1024 ? "1rem" : "0.75rem"}
+              onClick={() => {
+                handleNavigate(project.link);
+              }}
+            >
+              Vizualizar
+            </Button>
+          )}
+          {project.repositoryUrl && (
+            <Button
+              width={isLargerThan1024 ? "120px" : "100px"}
+              fontSize={isLargerThan1024 ? "1rem" : "0.75rem"}
+              onClick={() => {
+                handleNavigate(project.repositoryUrl);
+              }}
+            >
+              Repositório
+            </Button>
+          )}
+        </Flex>
+      </Box>
     </Flex>
   );
 };

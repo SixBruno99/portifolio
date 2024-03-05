@@ -7,11 +7,7 @@ export function MainLayout() {
   return (
     <Box>
       <Header />
-      <Flex
-        width="full"
-        minHeight="calc(100vh - 112px)"
-        bgGradient="linear(to-b, #232D3F, #0B666A)"
-      >
+      <Flex bgGradient="linear(to-b, #232D3F, #3A506B)">
         <Outlet />
       </Flex>
       <Footer />

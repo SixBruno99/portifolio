@@ -1,33 +1,41 @@
 import {
   Box,
   Flex,
+  Grid,
+  HStack,
   Heading,
-  Image,
   Text,
   keyframes,
+  useMediaQuery,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
 
-import { SocialMedias } from "../core/components/social";
+// Styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import "../style/swiper.css";
+
+// Libraries
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
+
+// Components
+import { AnimatedText } from "../core/components/animated-text";
+import { SocialMedias } from "../core/components/social-medias";
+import { ImageEffect } from "../core/components/image-effect";
 import { Projects } from "../core/components/projects";
+import { Skills } from "../core/components/skills";
+import { About } from "../core/components/about";
 
-// Images imports
-import Foto from "../assets/Images/foto.jpg";
-import Curriculo from "../assets/Images/curriculo.png";
-import Guia from "../assets/Images/guia-leticia.png";
-
-const imageChange = keyframes`
-  0% {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
-  }
-  100% {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  }
-
-`;
+// Mocks
+import {
+  FINAL_CONTACTS_PROPS,
+  INITIAL_CONTACTS_PROPS,
+} from "../mocks/contacts";
+import { PROJECTS_PROPS } from "../mocks/projects";
+import { SKILLS_PROPS } from "../mocks/skills";
 
 const textInitialization = keyframes`
   0% {
@@ -44,11 +52,8 @@ const textInitialization = keyframes`
 `;
 
 export function Home() {
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
   const prefersReducedMotion = usePrefersReducedMotion();
-
-  const imageAnimation = prefersReducedMotion
-    ? `${imageChange} infinite 3s ease-in`
-    : undefined;
 
   const textAnimation = prefersReducedMotion
     ? `${textInitialization} 1 1.5s ease-in`
@@ -56,26 +61,25 @@ export function Home() {
 
   return (
     <Flex
-      minHeight="calc(100vh - 112px)"
-      maxWidth="7xl"
-      marginY={8}
+      marginY={12}
+      maxWidth={isLargerThan1024 ? "7xl" : "full"}
       marginX="auto"
-      paddingInline="5"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
+      minHeight="calc(100vh - 112px)"
     >
-      <a href="#footer">nav</a>
-      <Flex width="full" justifyContent="space-evenly">
+      <Flex width={isLargerThan1024 ? "full" : ""} justifyContent="space-evenly" flexDirection={isLargerThan1024 ? "row" : "column"}>
         <Box marginY="auto">
-          <Text
+          {/* <Text
             fontSize="22px"
             fontWeight="bold"
             color="#F5F5F5"
             animation={textAnimation}
           >
             Bruno Henrique
-          </Text>
+          </Text> */}
+          <AnimatedText text="  Bruno Henrique" delay={100} />
           <Text
             fontSize="32px"
             fontWeight="bold"
@@ -84,55 +88,109 @@ export function Home() {
           >
             Front End Developer
           </Text>
+          {/* <AnimatedText text="  Front End Developer" delay={100} /> */}
           <Text marginTop={4} color="#F5F5F5" animation={textAnimation}>
-            Criando Interfaces Intuitivas e Experiências Incríveis no
-            <br />
-            Desenvolvimento Web de Alto Nível.
+            Criando Interfaces intuitivas para o usuário <br /> Proporcionando
+            experiências incríveis.
           </Text>
-          <Flex>
-            <SocialMedias />
-          </Flex>
+          <HStack py="1rem" gap="1rem">
+            {INITIAL_CONTACTS_PROPS.map((contact, index) => (
+              <SocialMedias
+                key={index}
+                name={contact.name}
+                link={contact.link}
+                color={contact.color}
+                icon={contact.icon}
+              />
+            ))}
+          </HStack>
         </Box>
-        <Box>
-          <Image animation={imageAnimation} src={Foto} width="300" h="400" />
-        </Box>
+          <ImageEffect />
       </Flex>
 
-      <Heading marginY={12} color="white">
-        Projects
+      <Heading id="technologies" marginY={12} color="white" fontStyle="italic">
+        Tecnologias
       </Heading>
 
-      <Flex maxWidth="full" minWidth="7xl" overflowX="scroll" gap={5}>
-        <Projects
-          projectImage={Curriculo}
-          projectLink="https://brunohenrique.netlify.app/"
-          title="Currículo programado"
-          description="Oi"
-          technologies="React"
-          scrollTime="1s"
-        />
-        <Projects
-          projectImage={Guia}
-          projectLink="http://localhost:3000/"
-          title="landing page"
-          description="Oi"
-          technologies="React"
-          scrollTime="5s"
-        />
-        <Projects
-          projectImage={Curriculo}
-          projectLink="https://brunohenrique.netlify.app/"
-          title="CV"
-          scrollTime="2s"
-        />
-        <Projects
-          projectImage={Curriculo}
-          projectLink="https://brunohenrique.netlify.app/"
-          title="CV"
-          scrollTime="2s"
-        />
-        <Projects projectImage={Curriculo} scrollTime="2s" />
+      <Grid width="full" templateColumns={isLargerThan1024 ? "repeat(4, 1fr)" : "repeat(2, 1fr)"} gap={4}>
+        {SKILLS_PROPS.map((skill, index) => (
+          <Skills
+            key={index}
+            id={skill.id}
+            title={skill.title}
+            icon={skill.icon}
+          />
+        ))}
+      </Grid>
+
+      <Heading id="projects" marginY={12} color="white" fontStyle="italic">
+        Projetos desenvolvidos
+      </Heading>
+
+      <Flex maxWidth="full" minWidth={isLargerThan1024 ? "7xl" : "0"}>
+        <Swiper
+          slidesPerView={isLargerThan1024 ? 2 : 1}
+          grabCursor={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+          keyboard={{
+            enabled: true,
+          }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          navigation={isLargerThan1024 ? true : false}
+          modules={[Pagination, Keyboard, Navigation, Autoplay]}
+        >
+          {PROJECTS_PROPS.map((project, index) => (
+            <SwiperSlide data-hash={`slide${index}`} key={project.id}>
+              <Projects
+                id={project.id}
+                title={project.title}
+                image={project.image}
+                link={project.link}
+                repositoryUrl={project.repositoryUrl}
+                description={project.description}
+                collaborator={project.collaborator}
+                technologies={project.technologies}
+                scrollTime={project.scrollTime}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Flex>
+
+      <Heading id="about" marginY={12} color="white" fontStyle="italic" fontSize={isLargerThan1024 ? "2.5rem" : "1.75rem"}>
+        Um pouco mais sobre mim
+      </Heading>
+
+      <About />
+
+      <Heading
+        id="contacts"
+        marginTop={16}
+        color="white"
+        textAlign="center"
+        fontStyle="italic"
+      >
+        Vamos trabalhar juntos?
+        <br /> Entre em contato!
+      </Heading>
+
+      <HStack py="1rem" gap="1rem">
+        {FINAL_CONTACTS_PROPS.map((contact, index) => (
+          <SocialMedias
+            key={index}
+            name={contact.name}
+            link={contact.link}
+            color={contact.color}
+            icon={contact.icon}
+          />
+        ))}
+      </HStack>
     </Flex>
   );
 }
