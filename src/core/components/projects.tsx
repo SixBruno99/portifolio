@@ -1,11 +1,19 @@
-import { Box, Button, Flex, Heading, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Link,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { IProjects } from "../../types/projects/interface";
 
 export const Projects = (project: IProjects) => {
-  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
-  const [isLargerThan764] = useMediaQuery('(min-width: 764px)')
-  const [isLargerThan420] = useMediaQuery('(min-width: 420px)')
+  const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
+  const [isLargerThan764] = useMediaQuery("(min-width: 764px)");
+  const [isLargerThan420] = useMediaQuery("(min-width: 420px)");
   const [isHovered, setIsHovered] = useState(false);
 
   function handleNavigate(navigator: string | undefined) {
@@ -16,8 +24,16 @@ export const Projects = (project: IProjects) => {
   return (
     <Flex
       maxHeight={isLargerThan764 ? "732px" : "564px"}
-      width={isLargerThan1024 ? "534px" : isLargerThan764 ? "464px" : isLargerThan420 ? "376px" : "350px"}
-      marginY="4rem"
+      width={
+        isLargerThan1024
+          ? "534px"
+          : isLargerThan764
+          ? "464px"
+          : isLargerThan420
+          ? "376px"
+          : "350px"
+      }
+      marginY={isLargerThan764 ? 16 : 8}
       marginX="auto"
       borderRadius="50px"
       flexDirection="column"
@@ -30,8 +46,18 @@ export const Projects = (project: IProjects) => {
           backgroundImage: `url(${project.image})`,
           backgroundPosition: isHovered ? "0 100%" : "0 0",
           transition: `background-position ${project.scrollTime} ease`,
-          backgroundSize: isLargerThan1024 ? "534px auto" : isLargerThan764 ? "464px auto" : isLargerThan420 ? "376px auto" : "100% auto",
-          height: isLargerThan1024 ? "440px" : isLargerThan420 ? "384px" : "300px",
+          backgroundSize: isLargerThan1024
+            ? "534px auto"
+            : isLargerThan764
+            ? "464px auto"
+            : isLargerThan420
+            ? "376px auto"
+            : "100% auto",
+          height: isLargerThan1024
+            ? "440px"
+            : isLargerThan420
+            ? "384px"
+            : "300px",
         }}
       ></Box>
       <Box padding={6} backgroundColor="#252933" borderBottomRadius="50px">
@@ -39,7 +65,10 @@ export const Projects = (project: IProjects) => {
           <Text color="white" fontSize="1rem" opacity="0.5">
             {project.technologies}
           </Text>
-          <Heading color="white" fontSize={isLargerThan1024 ? "2rem" : "1.5rem"}>
+          <Heading
+            color="white"
+            fontSize={isLargerThan1024 ? "2rem" : "1.5rem"}
+          >
             {project.title}
           </Heading>
           <Text color="white" fontSize={isLargerThan1024 ? "1.25rem" : "1rem"}>
@@ -55,7 +84,12 @@ export const Projects = (project: IProjects) => {
             )}
           </Text>
         </Flex>
-        <Flex width="full" marginY={isLargerThan764 ? 10 : 6} gap={4} justifyContent="center">
+        <Flex
+          width="full"
+          marginY={isLargerThan764 ? 10 : 6}
+          gap={4}
+          justifyContent="center"
+        >
           {project.link && (
             <Button
               width={isLargerThan1024 ? "120px" : "100px"}
