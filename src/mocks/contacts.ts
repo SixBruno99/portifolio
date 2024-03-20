@@ -23,7 +23,7 @@ export const INITIAL_CONTACTS_PROPS: IContacts[] = [
   },
   {
     name: "linkedin",
-    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho-cec%C3%ADlio-811858222/",
+    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho/",
     color: "#0077B5",
     icon: RiLinkedinBoxFill,
   },
@@ -44,7 +44,7 @@ export const FINAL_CONTACTS_PROPS: IContacts[] = [
   },
   {
     name: "linkedin",
-    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho-cec%C3%ADlio-811858222/",
+    link: "https://www.linkedin.com/in/bruno-henrique-ferreira-marinho/",
     color: "#0077B5",
     icon: RiLinkedinBoxFill,
   },
