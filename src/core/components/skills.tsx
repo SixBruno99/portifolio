@@ -14,7 +14,7 @@ export const Skills = (skill: ISkills) => {
         justifyContent="Center"
         gap={6}
       >
-        <Text textColor="white" fontWeight="bold" fontSize={isLargerThan768 ? "1.25rem" : "1rem"}>
+        <Text textColor="white" fontWeight="semibold" fontStyle="italic" fontSize={isLargerThan768 ? "1.25rem" : "1rem"}>
           {skill.title}
         </Text>
         <IconButton

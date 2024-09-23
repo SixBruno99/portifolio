@@ -1,7 +1,7 @@
 import { chakra, shouldForwardProp, Image, useMediaQuery } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 
-import Foto from "../../assets/Images/foto.jpg";
+import Foto from "../../assets/Images/profile.jpg";
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
