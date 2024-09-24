@@ -13,8 +13,8 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/Curriculo",
     title: "Currículo programado",
     description:
-      "Projeto a fim de por em prática os conhecimentos adquiridos durante minha carreira",
-    technologies: "React | Chakra-ui",
+      "Projeto realizado para reforçar meus cinhecimentos sobre construção de interface e habilidades com o git",
+    technologies: "React | JavaScript | Chakra-ui",
     scrollTime: "1s",
   },
   {
@@ -24,8 +24,8 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
     title: "Temporizador",
     description:
-      "Projeto que fiz para fortalecer os conhecimentos adquiridos durante meu estágio.",
-    technologies: "React | Sass",
+      "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass",
+    technologies: "React | TypeScript | Sass",
     scrollTime: "1s",
   },
   {
@@ -34,12 +34,12 @@ export const PROJECTS_PROPS: IProjects[] = [
     // link: "http://localhost:3000/",
     repositoryUrl: "https://github.com/SixBruno99/landing-page",
     title: "Landing Page",
-    description: "Landing-page feito em parceria com a desenvolvedora ",
+    description: "Landing-page para praticar habilidades de construção de interface feito em parceria com a dev ",
     collaborator: {
       name: "@lletcode",
       instagram: "https://www.instagram.com/lletcode/",
     },
-    technologies: "React | Chakra-ui",
+    technologies: "React | JavaScript | Chakra-ui",
     scrollTime: "5s",
   },
   {
@@ -49,11 +49,10 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/Curriculo",
     title: "Currículo programado",
     description:
-      "Projeto a fim de por em prática os conhecimentos adquiridos durante minha carreira",
-    technologies: "React",
+      "Projeto realizado para reforçar meus cinhecimentos sobre construção de interface e habilidades com o git",
+    technologies: "React | JavaScript | Chakra-ui",
     scrollTime: "1s",
   },
-
   {
     id: "5",
     image: Timer,
@@ -61,8 +60,8 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
     title: "Temporizador",
     description:
-      "Projeto que fiz para fortalecer os conhecimentos adquiridos durante meu estágio.",
-    technologies: "React | Sass",
+      "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass",
+    technologies: "React | TypeScript | Sass",
     scrollTime: "1s",
   },
   {
@@ -71,12 +70,12 @@ export const PROJECTS_PROPS: IProjects[] = [
     // link: "http://localhost:3000/",
     repositoryUrl: "https://github.com/SixBruno99/landing-page",
     title: "Landing Page",
-    description: "Landing-page feito em parceria com a desenvolvedora ",
+    description: "Landing-page para praticar habilidades de construção de interface feito em parceria com a dev ",
     collaborator: {
       name: "@lletcode",
       instagram: "https://www.instagram.com/lletcode/",
     },
-    technologies: "React | Chakra-ui",
+    technologies: "React | JavaScript | Chakra-ui",
     scrollTime: "5s",
   },
 ];

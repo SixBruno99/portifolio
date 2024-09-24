@@ -50,6 +50,7 @@ export const About = () => {
           </Text>
         </Box>
         <Box
+          minWidth="300px"
           maxWidth={isLargerThan1024 ? "full" : "768px"}
           margin={isLargerThan1024 ? "48px" : "24px"}
         >
@@ -59,10 +60,10 @@ export const About = () => {
             fontSize={isLargerThan1024 ? "1.25rem" : "1rem"}
           >
             Olá! Me chamo Bruno, tenho {age} anos e atuo como Desenvolvedor
-            Frontend. Tenho experiência sólida em React.js, JavaScript,
-            TypeScript, React Native, Flutter, Chakra-UI, entre outras
-            tecnologias relevantes. Atualmente, estou cursando Ciências da
-            Computação no CEUB.
+            Frontend. Tenho experiência sólida em React.js, Next.js JavaScript,
+            TypeScript, Flutter, Chakra-UI, Sass, entre outras tecnologias
+            relevantes. Atualmente, estou cursando Ciências da Computação no
+            CEUB.
           </Text>
           <Text
             textAlign="center"

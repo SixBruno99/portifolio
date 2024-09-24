@@ -35,11 +35,11 @@ export const Projects = (project: IProjects) => {
       }
       marginY={isLargerThan764 ? 16 : 8}
       marginX="auto"
-      borderRadius="50px"
+      borderRadius="24px"
       flexDirection="column"
     >
       <Box
-        borderTopRadius="50px"
+        borderTopRadius="24px"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
@@ -60,7 +60,7 @@ export const Projects = (project: IProjects) => {
             : "300px",
         }}
       ></Box>
-      <Box padding={6} backgroundColor="#252933" borderBottomRadius="50px">
+      <Box padding={6} backgroundColor="#252933" borderBottomRadius="24px">
         <Flex flexDirection="column" width="full" gap={isLargerThan764 ? 4 : 2}>
           <Text color="white" fontSize="1rem" opacity="0.5">
             {project.technologies}
