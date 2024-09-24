@@ -1,9 +1,9 @@
 import { IProjects } from "../types/projects/interface";
 
 // Images imports
-import Curriculo from "../assets/images/projects/curriculo.png";
-import Manual from "../assets/images/projects/manual-leticia.png";
-import Timer from "../assets/images/projects/time-counter.png";
+import Curriculo from "../assets/Images/projects/curriculo.png";
+import Manual from "../assets/Images/projects/manual-leticia.png";
+import Timer from "../assets/Images/projects/time-counter.png";
 
 export const PROJECTS_PROPS: IProjects[] = [
   {
