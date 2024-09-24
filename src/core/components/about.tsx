@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text, useMediaQuery } from "@chakra-ui/react";
 
 // Images imports
-import Tech from "../../assets/Images/footer.jpg";
+import Tech from "../../assets/images/footer.jpg";
 
 export const About = () => {
   const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");

@@ -1,8 +1,13 @@
 import { ISkills } from "../types/skills/interface";
 
 // Icons
-import { TbBrandReactNative } from "react-icons/tb";
+import { TbBrandNextjs } from "react-icons/tb";
 import { SiChakraui, SiGitlab } from "react-icons/si";
+import {
+  BiLogoJavascript,
+  BiLogoTypescript,
+  BiLogoFlutter,
+} from "react-icons/bi";
 import {
   FaHtml5,
   FaCss3,
@@ -11,11 +16,6 @@ import {
   FaGithub,
   FaFigma,
 } from "react-icons/fa";
-import {
-  BiLogoJavascript,
-  BiLogoTypescript,
-  BiLogoFlutter,
-} from "react-icons/bi";
 
 export const SKILLS_PROPS: ISkills[] = [
   {
@@ -40,13 +40,13 @@ export const SKILLS_PROPS: ISkills[] = [
   },
   {
     id: "5",
-    title: "React",
+    title: "ReactJs",
     icon: FaReact,
   },
   {
     id: "6",
-    title: "React Native",
-    icon: TbBrandReactNative,
+    title: "NextJs",
+    icon: TbBrandNextjs,
   },
   {
     id: "7",
