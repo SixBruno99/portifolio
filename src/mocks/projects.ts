@@ -13,7 +13,7 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/Curriculo",
     title: "Currículo programado",
     description:
-      "Projeto realizado para reforçar meus cinhecimentos sobre construção de interface e habilidades com o git",
+      "Projeto realizado para reforçar meus conhecimentos sobre construção de interface e habilidades com o git",
     technologies: "React | JavaScript | Chakra-ui",
     scrollTime: "1s",
   },
@@ -49,7 +49,7 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/Curriculo",
     title: "Currículo programado",
     description:
-      "Projeto realizado para reforçar meus cinhecimentos sobre construção de interface e habilidades com o git",
+      "Projeto realizado para reforçar meus conhecimentos sobre construção de interface e habilidades com o git",
     technologies: "React | JavaScript | Chakra-ui",
     scrollTime: "1s",
   },
@@ -60,7 +60,7 @@ export const PROJECTS_PROPS: IProjects[] = [
     repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
     title: "Temporizador",
     description:
-      "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass",
+      "Projeto realizado a fim de me desafiar e testar novas tecnologias presentes dentro do mercado como o Sass",
     technologies: "React | TypeScript | Sass",
     scrollTime: "1s",
   },
