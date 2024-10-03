@@ -7,7 +7,7 @@ export interface IProjects {
   description?: string;
   collaborator?: {
     name: string;
-    instagram: string;
+    instagram?: string;
   };
   technologies?: string;
   scrollTime: string;
