@@ -32,17 +32,6 @@ export const PROJECTS_PROPS: IProjects[] = [
   },
   {
     id: "3",
-    image: Store,
-    link: "https://mock-store.netlify.app/",
-    repositoryUrl: "https://github.com/SixBruno99/store",
-    title: "Loja online",
-    description:
-      "Projeto realizado para reforçar meus conhecimentos específicos em typescript e requisições http.",
-    technologies: "React | TypeScript | Chakra-ui",
-    scrollTime: "2s",
-  },
-  {
-    id: "4",
     image: Timer,
     link: "https://dudagaymer.netlify.app/",
     repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
@@ -51,6 +40,17 @@ export const PROJECTS_PROPS: IProjects[] = [
       "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass.",
     technologies: "React | TypeScript | Sass",
     scrollTime: "1s",
+  },
+  {
+    id: "4",
+    image: Store,
+    link: "https://mock-store.netlify.app/",
+    repositoryUrl: "https://github.com/SixBruno99/store",
+    title: "Loja online",
+    description:
+      "Projeto realizado para reforçar meus conhecimentos específicos em typescript e requisições http.",
+    technologies: "React | TypeScript | Chakra-ui",
+    scrollTime: "2s",
   },
   {
     id: "5",
