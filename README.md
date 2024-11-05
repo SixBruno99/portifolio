@@ -1,19 +1,52 @@
-<h1 align="center">Hi 👋, I'm Bruno Henrique</h1>
-<h3 align="center">A passionate frontend developer from Brazil</h3>
+# 🌐 Bruno Henrique - Portfólio Web
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sixbruno99" alt="sixbruno99" /></a> </p>
+[![Website](https://img.shields.io/badge/Website-Visit%20Site-blue?style=flat-square&logo=google-chrome)](https://brunohenriquedev.netlify.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect%20with%20me-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/bruno-henrique-ferreira-marinho)
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/bruno-henrique-ferreira-marinho" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="bruno henrique ferreira marinho cecílio" height="30" width="40" /></a>
-<a href="https://instagram.com/_brunohfc" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="_brunohfc" height="30" width="40" /></a>
-</p>
+Bem-vindo ao repositório do meu portfólio! Este projeto foi desenvolvido para compartilhar mais sobre minha trajetória, habilidades técnicas e os principais projetos em que trabalhei como desenvolvedor web. Acesse o site para ver o portfólio completo e explorar meus trabalhos mais recentes!
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
+---
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sixbruno99&show_icons=true&locale=en&layout=compact" alt="sixbruno99" /></p>
+## ✨ Sobre o Projeto
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=sixbruno99&show_icons=true&locale=en" alt="sixbruno99" /></p>
+Esse portfólio foi criado para ser uma vitrine do meu trabalho como desenvolvedor web, mostrando minha evolução na área e apresentando projetos que refletem minha paixão por tecnologia e design. O design e a estrutura do site foram cuidadosamente planejados para oferecer uma navegação intuitiva e agradável.
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=SixBruno99&" alt="sixbruno99" /></p>
+> **Objetivo**: Demonstrar meus conhecimentos técnicos, principais habilidades, e destacar os projetos que contribuíram para minha carreira.
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+Este projeto foi construído com as seguintes tecnologias:
+
+- ![React Icon](https://img.icons8.com/color/24/000000/react-native.png) **React** - Biblioteca JavaScript para construção de interfaces de usuário.
+- ![TypeScript Icon](https://img.icons8.com/color/24/000000/typescript.png) **TypeScript** - Superset do JavaScript que adiciona tipagem estática ao código.
+- ![Chakra UI Icon](https://img.icons8.com/color/24/000000/chakra-ui.png) **Chakra UI** - Biblioteca de componentes estilizados para React que facilita a construção de UIs acessíveis e customizáveis.
+
+---
+
+## 📂 Estrutura do Projeto
+
+O código está estruturado de forma a garantir a fácil manutenção do portfólio e utilizando o Chakra UI para criar componentes reutilizáveis e responsivos.
+
+---
+
+## 🚀 Como Rodar o Projeto Localmente
+
+Siga estas etapas para rodar o projeto em sua máquina local:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/SixBruno99/portifolio.git
+
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd portifolio
+
+3. Instale as dependências:
+   ```bash
+   pnpm install
+
+4. Inicie o projeto:
+   ```bash
+   pnpm dev
