@@ -30,17 +30,17 @@ export const PROJECTS_PROPS: IProjects[] = [
     technologies: "React | TypeScript | Chakra-ui",
     scrollTime: "1s",
   },
-  {
-    id: "3",
-    image: Timer,
-    link: "https://dudagaymer.netlify.app/",
-    repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
-    title: "Temporizador",
-    description:
-      "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass.",
-    technologies: "React | TypeScript | Sass",
-    scrollTime: "1s",
-  },
+  // {
+  //   id: "3",
+  //   image: Timer,
+  //   link: "https://dudagaymer.netlify.app/",
+  //   repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
+  //   title: "Temporizador",
+  //   description:
+  //     "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass.",
+  //   technologies: "React | TypeScript | Sass",
+  //   scrollTime: "1s",
+  // },
   {
     id: "4",
     image: Store,
