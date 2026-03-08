@@ -1,4 +1,5 @@
-import { Flex, Text, keyframes } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 import { useState, useEffect } from "react";
 
 const blinkAnimation = keyframes`
@@ -18,10 +19,12 @@ export const AnimatedText = ({ text, delay }: IText) => {
 
   useEffect(() => {
     let currentIndex = 0;
+
     const intervalId = setInterval(() => {
-      setTypedText((prevText) => prevText + text[currentIndex]);
+      setTypedText((prev) => prev + text[currentIndex]);
       currentIndex++;
-      if (currentIndex === text.length - 1) {
+
+      if (currentIndex === text.length) {
         clearInterval(intervalId);
       }
     }, delay);
@@ -31,7 +34,7 @@ export const AnimatedText = ({ text, delay }: IText) => {
 
   useEffect(() => {
     const cursorIntervalId = setInterval(() => {
-      setShowCursor((prevShowCursor) => !prevShowCursor);
+      setShowCursor((prev) => !prev);
     }, 500);
 
     return () => clearInterval(cursorIntervalId);

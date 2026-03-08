@@ -5,10 +5,10 @@ import {
   HStack,
   Heading,
   Text,
-  keyframes,
   useMediaQuery,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 // Styles
 import "swiper/css";
@@ -40,14 +40,14 @@ import { SKILLS_PROPS } from "../mocks/skills";
 const textInitialization = keyframes`
   0% {
     margin-top: 50px;
-    opacity: 0.1
+    opacity: 0.1;
   }
   50% {
-    opacity: 0.5
+    opacity: 0.5;
   }
   100% {
-    margin-top: 0
-    opacity: 1.0
+    margin-top: 0;
+    opacity: 1;
   }
 `;
 

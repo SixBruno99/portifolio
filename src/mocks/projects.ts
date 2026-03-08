@@ -4,7 +4,6 @@ import { IProjects } from "../types/projects/interface";
 import Curriculo from "../assets/Images/projects/curriculo.png";
 import Castfy from "../assets/Images/projects/castfy.png";
 import Store from "../assets/Images/projects/store.png";
-import Timer from "../assets/Images/projects/time-counter.png";
 import Manual from "../assets/Images/projects/manual-leticia.png";
 
 export const PROJECTS_PROPS: IProjects[] = [
@@ -30,17 +29,6 @@ export const PROJECTS_PROPS: IProjects[] = [
     technologies: "React | TypeScript | Chakra-ui",
     scrollTime: "1s",
   },
-  // {
-  //   id: "3",
-  //   image: Timer,
-  //   link: "https://dudagaymer.netlify.app/",
-  //   repositoryUrl: "https://github.com/SixBruno99/maria-eduarda",
-  //   title: "Temporizador",
-  //   description:
-  //     "Projeto realizado a fim de me desafiar e testar novas tecnologias dentro do mercado como o Sass.",
-  //   technologies: "React | TypeScript | Sass",
-  //   scrollTime: "1s",
-  // },
   {
     id: "4",
     image: Store,
